@@ -998,7 +998,9 @@ class Game:
                 if popup_shown:
                     # Load and display the WASD image
                     try:
-                        wasd_image = pygame.image.load("wasd_image.png").convert_alpha()
+                        wasd_image = pygame.image.load(
+                            os.path.join(self.BASE_DIR, "assets", "images", "others", "fishing", "wasd_image.png")
+                        ).convert_alpha()
                     except pygame.error as e:
                         print("Error loading image:", e)
                         wasd_image = pygame.Surface((200, 100))  # Temporary placeholder surface for debugging
