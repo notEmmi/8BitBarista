@@ -1,5 +1,5 @@
 import pygame, settingsdata
-from music_selector import MusicSelector
+from screens.music_selector import MusicSelector
 import sqlite3
 from GameState import GameState
 

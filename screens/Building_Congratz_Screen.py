@@ -2,7 +2,7 @@ import pygame
 import pygame
 from pygame import mixer
 import settingsdata
-from pet_selector import PetSelector
+from screens.pet_selector import PetSelector
 
 class BuildingCongratzScreen:
     def __init__(self, image_path, playername, selected_character, username):

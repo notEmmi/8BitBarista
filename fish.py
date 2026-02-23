@@ -4,6 +4,19 @@ import sys
 import random
 import math
 
+BASE_DIR = os.path.dirname(__file__)
+FISH_ASSETS_DIR = os.path.join(BASE_DIR, "assets", "images", "others", "fishing")
+FISH_IMAGES_DIR = os.path.join(FISH_ASSETS_DIR, "sprites")
+
+
+def load_image(path_parts, size=None, alpha=True):
+    image_path = os.path.join(*path_parts)
+    image = pygame.image.load(image_path)
+    image = image.convert_alpha() if alpha else image.convert()
+    if size is not None:
+        image = pygame.transform.scale(image, size)
+    return image
+
 class SwimmingFish:
     def __init__(self, image, tile_rect, fish_index):
         self.image_original = image
@@ -79,9 +92,9 @@ def run_fishing_minigame():
 
     # Load fish images
     fish_images = [
-        pygame.transform.scale(pygame.image.load('fish_images/Orange.png').convert_alpha(), (40, 40)),
-        pygame.transform.scale(pygame.image.load('fish_images/pink.png').convert_alpha(), (40, 40)),
-        pygame.transform.scale(pygame.image.load('fish_images/Blue.png').convert_alpha(), (40, 40))
+        load_image((FISH_IMAGES_DIR, 'Orange.png'), size=(40, 40)),
+        load_image((FISH_IMAGES_DIR, 'pink.png'), size=(40, 40)),
+        load_image((FISH_IMAGES_DIR, 'Blue.png'), size=(40, 40)),
     ]
 
     #WASD
@@ -89,10 +102,10 @@ def run_fishing_minigame():
     wasd_popup_timer = pygame.time.get_ticks()
     WASD_POPUP_DURATION = 2000  # milliseconds (2 seconds)
 
-    wasd_image = pygame.transform.scale(pygame.image.load('wasd_image.png').convert_alpha(), (60, 60))
+    wasd_image = load_image((FISH_ASSETS_DIR, 'wasd_image.png'), size=(60, 60))
 
     #E
-    e_popup = pygame.transform.scale(pygame.image.load('e.png').convert_alpha(), (60, 60))
+    e_popup = load_image((FISH_ASSETS_DIR, 'e.png'), size=(60, 60))
 
     # Player
     player = pygame.Rect(100, 100, 50, 50)
@@ -140,9 +153,8 @@ def run_fishing_minigame():
     #         break
 
 
-    hand_image = pygame.transform.scale(
-        pygame.image.load('fish_images/hand.png').convert_alpha(), (50, 50)
-    )
+    hand_image = load_image((FISH_IMAGES_DIR, 'hand.png'), size=(50, 50))
+    background = load_image((FISH_ASSETS_DIR, 'background.png'), size=(WIDTH, HEIGHT), alpha=False)
 
     fish_data = [
         {"gold": 10, "slider_speed": 5},
@@ -255,9 +267,6 @@ def run_fishing_minigame():
 
         # Drawing
         #screen.fill((150, 200, 255))
-
-        background = pygame.image.load('background.png').convert()
-        background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
         screen.blit(background, (0,0))
 

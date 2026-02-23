@@ -120,12 +120,12 @@ class RegistrationApp:
                         self.active_box = "password"
                     elif self.register_button.collidepoint(event.pos):
                         self.register_user()
-                        from Log_In import LoginScreen  # Local import to avoid circular import
+                        from screens.Log_In import LoginScreen  # Local import to avoid circular import
                         login_screen = LoginScreen()
                         login_screen.run()
                         self.running = False
                     elif self.back_button.collidepoint(event.pos):
-                        from Log_In import LoginScreen  # Local import to avoid circular import
+                        from screens.Log_In import LoginScreen  # Local import to avoid circular import
                         login_screen = LoginScreen()
                         login_screen.run()
                         self.running = False
@@ -145,7 +145,7 @@ class RegistrationApp:
                             self.password = self.password[:-1]
                         elif event.key == pygame.K_RETURN:
                             self.register_user()
-                            from Log_In import LoginScreen  # Local import to avoid circular import
+                            from screens.Log_In import LoginScreen  # Local import to avoid circular import
                             login_screen = LoginScreen()
                             login_screen.run()
                             self.running = False

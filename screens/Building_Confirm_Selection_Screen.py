@@ -1,6 +1,6 @@
 import pygame
-import Building_Selection_Screen
-from Building_Congratz_Screen import BuildingCongratzScreen
+import screens.Building_Selection_Screen
+from screens.Building_Congratz_Screen import BuildingCongratzScreen
 
 class BuildingConfirmationScreen:
     def __init__(self, image_path, playername, selected_character, username):
@@ -64,7 +64,7 @@ class BuildingConfirmationScreen:
 
                     elif self.is_inside_circle(mouse_pos, self.circle_right_x, self.circle_y, self.CIRCLE_RADIUS):
                         print("NO clicked! Cancelling selection.")
-                        from Building_Selection_Screen import BuildingSelectionScreen
+                        from screens.Building_Selection_Screen import BuildingSelectionScreen
                         selection_screen = BuildingSelectionScreen()
                         selection_screen.run()
                         running = False
