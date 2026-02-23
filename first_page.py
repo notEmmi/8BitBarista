@@ -9,7 +9,7 @@ import customers
 import store
 import inventory
 import random
-import screens.start_menu
+import screens.start_menu as start_menu
 import subprocess
 import settingsdata
 import subprocess
