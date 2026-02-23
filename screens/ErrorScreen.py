@@ -1,7 +1,7 @@
 import pygame
 import settingsdata
 from pygame import mixer
-from Log_In import LoginScreen
+from screens.Log_In import LoginScreen
 
 
 class ErrorScreen:

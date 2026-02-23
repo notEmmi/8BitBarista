@@ -1,5 +1,10 @@
+from screens.Log_In import LoginScreen
 
-import Log_In as Log_In
 
-loginUI = Log_In.LoginScreen()
-loginUI.run()
+def main():
+	login_ui = LoginScreen()
+	login_ui.run()
+
+
+if __name__ == "__main__":
+	main()

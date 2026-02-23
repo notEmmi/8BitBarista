@@ -3,10 +3,10 @@ from pygame import mixer
 import sqlite3
 from config_logIn import *
 
-from Loading import LoadingScreen
-from start_menu import StartMenu
+from screens.Loading import LoadingScreen
+from screens.start_menu import StartMenu
 import bcrypt
-from registration import RegistrationApp
+from screens.registration import RegistrationApp
 
 
 
@@ -108,7 +108,7 @@ class LoginScreen:
     def try_login(self):
         print(f"Logging in with:\nUsername: {self.username}\nPassword: {self.password}")
         if not self.check_username(self.username):
-            from ErrorScreen import ErrorScreen
+            from screens.ErrorScreen import ErrorScreen
             Error_Screen = ErrorScreen("invalid Username")
             Error_Screen.run()
             self.running = False
@@ -127,7 +127,7 @@ class LoginScreen:
                 loading_screen.run()
             else:
                 print("Invalid password!")
-                from ErrorScreen import ErrorScreen
+                from screens.ErrorScreen import ErrorScreen
                 Error_Screen = ErrorScreen("Incorrect password")
                 Error_Screen.run()
                 self.running = False

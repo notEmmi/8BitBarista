@@ -9,13 +9,13 @@ import customers
 import store
 import inventory
 import random
-import start_menu
+import screens.start_menu as start_menu
 import subprocess
 import settingsdata
 import subprocess
 from pygame_gui import UI_BUTTON_PRESSED
 from fish import run_fishing_minigame
-from music_selector import MusicSelector
+from screens.music_selector import MusicSelector
 import sqlite3
 from GameState import GameState
 from fish import run_fishing_minigame
@@ -998,7 +998,9 @@ class Game:
                 if popup_shown:
                     # Load and display the WASD image
                     try:
-                        wasd_image = pygame.image.load("wasd_image.png").convert_alpha()
+                        wasd_image = pygame.image.load(
+                            os.path.join(self.BASE_DIR, "assets", "images", "others", "fishing", "wasd_image.png")
+                        ).convert_alpha()
                     except pygame.error as e:
                         print("Error loading image:", e)
                         wasd_image = pygame.Surface((200, 100))  # Temporary placeholder surface for debugging

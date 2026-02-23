@@ -1,5 +1,5 @@
 import pygame
-from Building_Confirm_Selection_Screen import BuildingConfirmationScreen
+from screens.Building_Confirm_Selection_Screen import BuildingConfirmationScreen
 
 class BuildingSelectionScreen:
     def __init__(self, playername, selected_character, username):

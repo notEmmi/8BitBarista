@@ -3,3 +3,5 @@ __pycache__/
 utility/tile_properties_output.txt
 selected_character.txt
 /__pycache__
+.DS_Store
+Thumbs.db

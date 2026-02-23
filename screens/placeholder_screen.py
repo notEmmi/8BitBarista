@@ -1,6 +1,6 @@
 import pygame
 import sys
-import temp_recipes_open_screen
+import screens.temp_recipes_open_screen
 
 class PlaceholderScreen:
     def __init__(self):

@@ -1,10 +1,10 @@
 import pygame
 import sys
 import os
-from options import OptionsMenu
-from credits import CreditsScreen
-from advanced import AdvancedMenu
-from keybinds import ControlsMenu
+from screens.options import OptionsMenu
+from screens.credits import CreditsScreen
+from screens.advanced import AdvancedMenu
+from screens.keybinds import ControlsMenu
 from GameState import GameState
 import sqlite3
 
@@ -61,7 +61,7 @@ class StartMenu:
             image_path = os.path.join("assets", "images", "others", "coffee.png")
             self.coffee_img = pygame.image.load(image_path)
             self.coffee_img = pygame.transform.scale(self.coffee_img, (235, 235))
-        except:
+        except (pygame.error, FileNotFoundError):
             self.coffee_img = None
 
     def draw_blurred_shadow(self, surface, rect, blur_radius=10, offset_x=8, offset_y=8, border_radius=12):
@@ -72,6 +72,7 @@ class StartMenu:
         pygame.draw.rect(shadow_surface, self.SHADOW_COLOR, shadow_rect, border_radius=border_radius)
         surface.blit(shadow_surface, (rect.x, rect.y))
 
+    @staticmethod
     def load_user_save(username):
         conn = sqlite3.connect("mydatabase.db")
         cursor = conn.cursor()
@@ -131,7 +132,7 @@ class StartMenu:
         advanced_menu = AdvancedMenu()
         controls_menu = ControlsMenu()
         credits = CreditsScreen()  # Create an instance of CreditsScreen
-        from character_selection import CharacterSelector  # Import CharacterSelector
+        from screens.character_selection import CharacterSelector  # Import CharacterSelector
         character_selector = CharacterSelector(self.username)  # Create an instance of CharacterSelector
         while running:
             events = pygame.event.get()
@@ -232,5 +233,5 @@ class StartMenu:
         sys.exit()
 
 if __name__ == "__main__":
- start_menu = StartMenu()
- start_menu.run()
+    start_menu = StartMenu(username="player")
+    start_menu.run()
