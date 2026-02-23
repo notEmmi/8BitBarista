@@ -26,7 +26,7 @@
     * UI Overhaul: Re-designed interfaces for the Shop, Fishing, and Store for better user feedback.
     * Customization: Added pet systems, house upgrades, and dynamic background music.
     * Persistence: Implemented the initial Save/Load game feature.
-* **Sprint 5: Optimization** – Improved the Save system architecture and finalized the Settings menu (Volume, Game Speed, etc.).
+* **Sprint 5: Future Plans** – Improve the Save system architecture and finalize the Settings menu (Volume, Game Speed, etc.).
 
 ### **Phase 3: Independent Refactor (Personal Sprint)**
 As the project transitioned from a group prototype to a portfolio-ready product, I performed a specialized **Cleanup & Quality Assurance Sprint**:
@@ -36,10 +36,16 @@ As the project transitioned from a group prototype to a portfolio-ready product,
 
 ---
 
-## 🖼️ Gallery
-| Brewing Logic | Inventory Management | Fishing Minigame |
-| :---: | :---: | :---: |
-| ![Brewing](docs/images/brewing.png) | ![Inventory](docs/images/inventory.png) | ![Fishing](docs/images/fishing.png) |
+## 🖼️ Game Gallery
+| ☕ Inside the Cafe | 🌾 Farming Mechanics |
+| :---: | :---: |
+| ![Inside Cafe](docs/cafe.jpeg) | ![Farming](docs/farming.png) |
+| *Managing NPC interactions and barista order-taking* | *Grid-based crop cultivation and tool selection system* |
+
+| 🛒 The Shop | 🎣 Fishing Minigame |
+| :---: | :---: |
+| ![Store](docs/shop.png) | ![Fishing](docs/fishing.png) |
+| *SQLite-driven inventory shop for items and crops* | *Timing-based reaction minigame with dynamic gold rewards* |
 
 ## 📂 Project Layout
 - `Game.py` – Login launcher and main application entry point.
@@ -53,3 +59,9 @@ As the project transitioned from a group prototype to a portfolio-ready product,
    ```bash
    git clone [https://github.com/YourUsername/8BitBarista-Refactored.git](https://github.com/YourUsername/8BitBarista-Refactored.git)
    cd 8BitBarista-Refactored
+
+2. **Install & Run:**
+   ```bash
+   pip install -r requirements.txt
+   python Game.py
+   ---
